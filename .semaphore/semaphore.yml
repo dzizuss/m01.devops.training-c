@@ -12,6 +12,7 @@ blocks:
           commands:
             - checkout
             - make app
+            - artifact push workflows app
             - echo hello
   - name: Tests
     task:
@@ -21,7 +22,7 @@ blocks:
       jobs:
         - name: Run app
           commands:
-            - ls -la
+            - artifact pull workflows app
             - chmod +x app
             - ./app
         - name: Lint
