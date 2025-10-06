@@ -21,6 +21,7 @@ blocks:
       jobs:
         - name: Run app
           commands:
+            - ls -la
             - chmod +x app
             - ./app
         - name: Lint
